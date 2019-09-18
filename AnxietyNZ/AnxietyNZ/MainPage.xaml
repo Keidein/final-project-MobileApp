@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AnxietyNZ"
+             x:Class="AnxietyNZ.MainPage">
+
+    
+
+    
+
+    <ListView x:Name="contributorListView" ItemTapped="contributor_detail_navigate" IsPullToRefreshEnabled="True" Margin=" 10 " SeparatorVisibility="Default">
+        
+
+        <ListView.ItemTemplate>
+            <DataTemplate >
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Clicked="Delete_Contributor" CommandParameter="{Binding .}"
+                            Text="Delete" IsDestructive="True" />
+                    </ViewCell.ContextActions>
+                    
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="listProfiles" Source="profile.png" Grid.RowSpan="2" Grid.Column="0" />
+                        <Label Text="{Binding contributor_name}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="CornflowerBlue" FontSize="Micro" />
+                        <Label Text="{Binding contributor_email}" Grid.Row="1" Grid.Column="1" FontAttributes="Italic" FontSize="Micro" />
+                        <Button Text="Edit" FontSize="7" Clicked="Edit_Contributor" HorizontalOptions="End" Grid.RowSpan="2" Grid.Column="3" IsVisible="True"/>
+                        </Grid>
+                    
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>   
+    </ListView>
+
+</ContentPage>

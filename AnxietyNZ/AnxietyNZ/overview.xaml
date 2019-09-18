@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnxietyNZ.overview">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10">
+                <Image x:Name="OverviewIcon" Source="LoginIcon.png" Margin="0,30,0,0" />
+            
+                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="Anxiety is a common and natural feeling that everyone experiences. However, if anxiety is significantly interfering with daily life, then it is important to get help." />
+                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="It is completely natural and normal to become anxious when faced with something that is threatening or dangerous, embarrassing or stressful. "/>
+                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="This app has a selection of professionals and contributors contact information. If you have any questions about anxiety, or think you might be suffering from it, these people can help."/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnxietyNZ.newContributorPage">
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Margin="10, 10, 10, 0" x:Name="ContributorInfo">
+
+                <!--Entry x:Name="image_entry" Placeholder="placeholder for image entry" /-->
+                <Label x:Name="update_id" Text="{Binding contributor_id}" IsVisible="False"/>
+                <Label x:Name="add_label" FontSize="Large" Text="Add a new Contributor"/>
+
+
+                <Label Text="contributor_name" FontSize="Small"/>
+                <Entry x:Name="name_entry"  Placeholder="Contributor_Name" Text="{Binding contributor_name}"/>
+                <Label Text="contributor_email" FontSize="Small"/>
+                <Entry x:Name="email_entry" Placeholder="Contributor_Email" Text="{Binding contributor_email}"/>
+                <Label Text="contributor_phone_number" FontSize="Small"/>
+                <Entry x:Name="ph_number_entry" Placeholder="Contributor_Phone_Number" Text="{Binding contributor_phone_number}"/>
+                <Label Text="contributor_address" FontSize="Small"/>
+                <Entry x:Name="address_entry" Placeholder="Contributor_Address" Text="{Binding contributor_address}"/>
+
+                <Button Text="Save" Clicked="Save_Contributor" />
+                <Button Text="Edit" Clicked="Edit_Contributor" />
+
+            </StackLayout>
+        </ScrollView>    
+        
+    </ContentPage.Content>
+</ContentPage>

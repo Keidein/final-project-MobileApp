@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnxietyNZ.intro">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="CornflowerBlue">
+            <Image x:Name="LoginIcon" Source="LoginIcon.png" HorizontalOptions="Center" />
+            <Button FontSize="Large" TextColor="White" HorizontalOptions="Center" Text="Welcome to AnxietyNZ!" Clicked="Button_Clicked" />
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

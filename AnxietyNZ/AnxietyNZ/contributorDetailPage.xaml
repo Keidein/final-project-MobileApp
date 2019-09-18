@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnxietyNZ.contributorDetailPage">
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout HorizontalOptions="Center" Margin="10">
+                <Image x:Name="profile" WidthRequest="200" HeightRequest="200" />
+
+                <Label FontSize="Small" HorizontalTextAlignment="Center" Text="Name:" TextColor="White" BackgroundColor="CornflowerBlue" FontAttributes="Bold"  />
+                <Label x:Name="contributor_name_label" HorizontalTextAlignment="Start" FontSize="Medium"  />
+
+                <Label FontSize="Small" HorizontalTextAlignment="Center" Text="Phone Number" TextColor="White" BackgroundColor="CornflowerBlue" FontAttributes="Bold" />
+                <Label x:Name="contributor_phone_number_label" HorizontalTextAlignment="Start" FontSize="Medium" />
+
+                <Label FontSize="Small" HorizontalTextAlignment="Center" Text="Contact Email" TextColor="White" BackgroundColor="CornflowerBlue" FontAttributes="Bold"  />
+                <Label x:Name="contributor_email_label" HorizontalTextAlignment="Start" FontSize="Medium" />
+
+                <Label FontSize="Small" HorizontalTextAlignment="Center" Text="Address" TextColor="White" BackgroundColor="CornflowerBlue" FontAttributes="Bold" />
+                <Label x:Name="contributor_address_label" HorizontalTextAlignment="Start" FontSize="Medium" />
+            
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>
