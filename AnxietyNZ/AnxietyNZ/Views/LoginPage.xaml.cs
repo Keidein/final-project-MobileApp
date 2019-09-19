@@ -37,31 +37,41 @@ namespace AnxietyNZ.Views
 
         async void SignInProcedure(object sender, EventArgs e)
         {
-            User user = new User(Entry_Username.Text, Entry_Password.Text);
-            if (user.CheckInformation())
+            if (Entry_Username.Text == null )
             {
-                await DisplayAlert("Login", "Login Success", "Ok");
-                // var result = await App.RestService.Login(user);
-                var result = new Token();
-                if (result != null)
+                await DisplayAlert("Login", "Login incorrect, empty username or password", "Ok");
+            } else if (Entry_Password.Text == null)
+            {
+                await DisplayAlert("Login", "Login incorrect, empty username or password", "Ok");
+            } else {
+                User user = new User(Entry_Username.Text, Entry_Password.Text);
+                if (user.CheckInformation())
                 {
-                    //App.UserDatabase.SaveUser(user);
-                    //App.TokenDatabase.SaveToken(result);
-                    if(Device.OS == TargetPlatform.Android)
+                    await DisplayAlert("Login", "Login Success", "Ok");
+                    // var result = await App.RestService.Login(user);
+                    var result = new Token();
+                    if (result != null)
                     {
-                        Application.Current.MainPage = new NavigationPage(new master.MasterDetailPage1());
+                        //App.UserDatabase.SaveUser(user);
+                        //App.TokenDatabase.SaveToken(result);
+                        if (Device.OS == TargetPlatform.Android)
+                        {
+                            Application.Current.MainPage = new NavigationPage(new master.MasterDetailPage1());
+                        }
+                        else if (Device.OS == TargetPlatform.iOS)
+                        {
+                            await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+                        }
                     }
-                    else if (Device.OS == TargetPlatform.iOS)
-                    {
-                        await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
-                    }
+
                 }
-                
+                else
+                {
+                    await DisplayAlert("Login", "Login incorrect, empty username or password", "Ok");
+                }
             }
-            else
-            {
-               await DisplayAlert("Login", "Login incorrect, empty username or password", "Ok");
-            }
+
+            
         }
     }
 }
